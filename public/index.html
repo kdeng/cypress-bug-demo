@@ -1,0 +1,24 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The HTML5 Template</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <script src="header.min.js"></script>
+</head>
+
+<body>
+  <h1>Main Header</h1>
+  <button id="button">Click me</button>
+  <div id="content"></div>
+  <script type="text/javascript">
+  $(function() {
+      $('#button').on('click', function(e) {
+          $('#content').html("clicked");
+      });
+  })
+  </script>
+</body>
+</html>
