@@ -1,9 +1,0 @@
-{
-    "extends": [
-      "airbnb",
-      "plugin:vue/recommended"
-    ],
-    "rules": {
-      "func-names": ["error", "never"]
-    }
-  }
