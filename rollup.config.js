@@ -1,6 +1,6 @@
 import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
-import eslint from 'rollup-plugin-eslint';
+import { eslint } from 'rollup-plugin-eslint';
 import inject from 'rollup-plugin-inject';
 import replace from 'rollup-plugin-replace';
 import resolve from 'rollup-plugin-node-resolve';
