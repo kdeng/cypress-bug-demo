@@ -7,27 +7,12 @@ import resolve from 'rollup-plugin-node-resolve';
 import uglify from 'rollup-plugin-uglify';
 
 const plugins = [
-  replace({
-    exclude: 'node_modules/**',
-    ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
-    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
-    JQUERYMIGRATE: ((process.env.NODE_ENV !== 'production') ? "'jquery-migrate'" : "'jquery-migrate/dist/jquery-migrate.min'"),
-  }),
-  eslint({
-    exclude: [
-      'src/styles/**',
-    ],
-  }),
   resolve({
     jsnext: true,
     main: true,
     browser: true,
   }),
-  commonjs({
-    namedExports: {
-      'node_modules/jquery-migrate/dist/jquery-migrate.min.js': ['migrate'],
-    },
-  }),
+  commonjs(),
   inject({
     include: '**/*.js',
     exclude: 'node_modules',
@@ -39,8 +24,7 @@ const plugins = [
   }),
   babel({
     exclude: 'node_modules/**',
-  }),
-  (process.env.NODE_ENV === 'production' && uglify()),
+  })
 ];
 
 // rollup.config.js
